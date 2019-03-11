@@ -1,5 +1,8 @@
 package com.example.cy.demo;
 
+import com.example.cy.demo.aop.AopConfig;
+import com.example.cy.demo.aop.DemoAnnotationService;
+import com.example.cy.demo.aop.DemoMethodService;
 import com.example.cy.demo.javabean.UseFunctionService;
 
 import org.springframework.boot.SpringApplication;
@@ -17,5 +20,12 @@ public class DemoApplication {
 		context.close();
 		// System.out.printf(useService.sayHelloString("a"));
 		System.out.printf(useFunctionService.SayHello("b"));
+
+		AnnotationConfigApplicationContext context2 = new AnnotationConfigApplicationContext(AopConfig.class);
+		DemoAnnotationService demoAnnotationService = context2.getBean(DemoAnnotationService.class);
+		DemoMethodService demoMethodService = context2.getBean(DemoMethodService.class);
+		demoAnnotationService.add();
+		demoMethodService.add();
+		context2.close();
 	}
 }
