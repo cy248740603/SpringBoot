@@ -1,7 +1,6 @@
 package com.example.cy.demo;
 
 import com.example.cy.demo.javabean.UseFunctionService;
-import com.example.cy.demo.servicebean.UseService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

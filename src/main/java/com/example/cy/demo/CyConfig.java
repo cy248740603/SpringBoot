@@ -2,10 +2,8 @@ package com.example.cy.demo;
 
 import com.example.cy.demo.javabean.FunctionService;
 import com.example.cy.demo.javabean.UseFunctionService;
-import com.example.cy.demo.servicebean.UseService;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
