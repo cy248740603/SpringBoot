@@ -3,6 +3,7 @@ package com.example.cy.demo;
 import com.example.cy.demo.aop.AopConfig;
 import com.example.cy.demo.aop.DemoAnnotationService;
 import com.example.cy.demo.aop.DemoMethodService;
+import com.example.cy.demo.el.ElConfig;
 import com.example.cy.demo.javabean.UseFunctionService;
 
 import org.springframework.boot.SpringApplication;
@@ -19,7 +20,7 @@ public class DemoApplication {
 		UseFunctionService useFunctionService = context.getBean(UseFunctionService.class);
 		context.close();
 		// System.out.printf(useService.sayHelloString("a"));
-		System.out.printf(useFunctionService.SayHello("b"));
+		System.out.println(useFunctionService.SayHello("b"));
 
 		AnnotationConfigApplicationContext context2 = new AnnotationConfigApplicationContext(AopConfig.class);
 		DemoAnnotationService demoAnnotationService = context2.getBean(DemoAnnotationService.class);
@@ -27,5 +28,10 @@ public class DemoApplication {
 		demoAnnotationService.add();
 		demoMethodService.add();
 		context2.close();
+
+		AnnotationConfigApplicationContext el = new AnnotationConfigApplicationContext(ElConfig.class);
+		ElConfig resourceService = el.getBean(ElConfig.class);
+		resourceService.outputResource();
+		el.close();
 	}
 }
